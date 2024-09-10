@@ -5,6 +5,5 @@ runs:
   steps:
     - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       with:
-        repository: 'prometheus/promci'
+        repository: 'jan--f/promci'
         path: '.github/promci'
-        ref: v0.4.2
