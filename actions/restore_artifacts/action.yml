@@ -6,14 +6,15 @@ runs:
   using: composite
   steps:
     - name: Download all workflow run artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
       with:
-        name: artifact
+        pattern: artifact-*
+        merge-multiple: true
         path: .artifacts
     - run: |
         for tar in .artifacts/*.tar
         do
           tar xvf $tar
+          rm $tar
         done
-        rm -v .artifacts/*.tar
       shell: bash
