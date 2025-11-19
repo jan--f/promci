@@ -15,7 +15,10 @@ jobs:
       - name: cleanup
         shell: bash
         run: |
+          which go
+          go version
           df -h
+          echo $GOPATH
           # Remove Java (JDKs)
           sudo rm -rf /usr/lib/jvm
           # Remove .NET SDKs
@@ -36,6 +39,6 @@ jobs:
           sudo rm -rf /opt/az
           # Remove PowerShell
           sudo rm -rf /usr/local/share/powershell
-          # Remove CodeQL and other toolcaches
-          sudo rm -rf /opt/hostedtoolcache
           df -h
+          which go
+          go version
